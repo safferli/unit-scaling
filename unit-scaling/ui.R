@@ -8,12 +8,15 @@ sidebar <-   dashboardSidebar(
     menuItem("Widgets", tabName = "widgets", icon = icon("th"))
   ),
   
-  # from-unit conversion
-  selectizeInput("from_unit", label = "From unit:", choices = from.units, width = "45%"), 
-  textInput("from_length", label = "From length:", width = "45%"),
-  # to-unit conversion
-  selectizeInput("to_unit", label = "To unit:", choices = to.units),
-  textInput("to_length", label = "To length:")
+  # multiple inputs on one row: http://stackoverflow.com/questions/20637248/shiny-4-small-textinput-boxes-side-by-side
+  #fluidRow(
+    # from-unit conversion
+    selectizeInput("from_unit", label = "From unit:", choices = from.units, width = "45%"), 
+    textInput("from_length", label = "From length:", width = "45%"),
+    # to-unit conversion
+    selectizeInput("to_unit", label = "To unit:", choices = to.units),
+    textInput("to_length", label = "To length:")
+  #)
 )
 
 ## Body content
