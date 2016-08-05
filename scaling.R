@@ -12,4 +12,5 @@ to = c("mm", "cm", "m", "inch", "ft", "yd")
 
 birk::conv_unit(10, "m", "yd")
 
+rsconnect::deployApp(appDir = "unit-scaling")
 
