@@ -20,16 +20,18 @@ sidebar <-   dashboardSidebar(
 
 
 ## Body content
-body <-   dashboardBody(
-  # tabItems(
-  #   
-  #   # First tab content
-  #   tabItem(tabName = "dashboard",
-            fluidRow(
-              box(textOutput("text_output"), height = 250))
-    )
-  # )
-# )
+body <- dashboardBody(
+  fluidRow(
+    h2("scaling result"),
+    box(textOutput("text_output"), width=8),
+    actionButton("keep", "keep results")
+  ),
+  fluidRow(
+    h2("stored values"),
+    DT::dataTableOutput("datatable")
+  )
+)
+
 
 # put everything together now! 
 ui <- dashboardPage(header, sidebar, body)
