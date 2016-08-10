@@ -9,14 +9,14 @@ server <- function(input, output) {
       "\n\n With a scale factor of", paste0(input$scale_numerator, "/", input$scale_denominator),
       "the result is:", 
       # scaled result
-      conv_result*input$scale_numerator/input$scale_denominator,
-      input$to_unit
+      paste0("<b>", conv_result*input$scale_numerator/input$scale_denominator),
+      paste0(input$to_unit, "</b>")
     )
   })
   
   # render DT of the stored conversions
-  output$datatable <- DT::renderDataTable(
-    {values$dta}, options = list(
+  output$datatable <- DT::renderDataTable({values$dta},
+    options = list(
       dom = 'Bfrtip', buttons = c('copy', 'csv', 'pdf', 'print')
     ), extensions = "Buttons", rownames = FALSE
   )

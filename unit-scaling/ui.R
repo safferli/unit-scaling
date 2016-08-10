@@ -23,7 +23,7 @@ sidebar <-   dashboardSidebar(
 body <- dashboardBody(
   fluidRow(
     h2("scaling result"),
-    box(textOutput("text_output"), width=8),
+    box(htmlOutput("text_output"), width=8),
     actionButton("keep", "keep results")
   ),
   fluidRow(
