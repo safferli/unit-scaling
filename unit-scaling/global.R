@@ -5,6 +5,7 @@ library(shinydashboard)
 library(measurements)
 # datatable
 library(DT)
+library(dplyr)
 
 # birk::conv_unit(x, from, to)
 # Length: angstrom, nm, um, mm, cm, dm, m, km, inch, ft, yd, fathom, mi, naut_mi, au, light_yr, parsec, point
